@@ -60,7 +60,8 @@ Things you may want to cover:
 - has_many :user, through: members
 
 
-##messagesテーブル
+## messagesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |body|text|
@@ -69,7 +70,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :members
-
 
 
 
