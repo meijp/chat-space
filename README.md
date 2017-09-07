@@ -23,17 +23,21 @@ Things you may want to cover:
 
 * ...
 
+
+# ChatSpaceのDB設計
+
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |email|string|null: false|
+|password|string|null: false|
 
 ### Association
 - has_many :members
 - has_many :messages
-- has_many :groups, through: members
+- has_many :groups, through: :members
 
 
 ## membersテーブル
@@ -44,8 +48,8 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
 - belongs_to :user
+- belongs_to :group
 
 
 ## groupsテーブル
@@ -57,7 +61,7 @@ Things you may want to cover:
 ### Association
 - has_many :members
 - has_many :messages
-- has_many :user, through: members
+- has_many :user, through: :members
 
 
 ## messagesテーブル
@@ -66,10 +70,12 @@ Things you may want to cover:
 |------|----|-------|
 |body|text|
 |image|string|
-|members_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :members
+- belongs_to :user
+- belongs_to :group
 
 
 
