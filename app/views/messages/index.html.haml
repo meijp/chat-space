@@ -1,0 +1,37 @@
+#wrapper
+  .notification
+    %p チャットグループが作成されました。
+  .sidebar
+    .top
+      .top__user ユーザー名
+      %ul
+        %li.top__user--new
+          %a{:href => "#"}
+            %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+        %li.top__user--edit
+          %a{:href => "#"}
+            %i.fa.fa-cog{"aria-hidden" => "true"}
+    .groups
+      .groups__group
+        .groups__group--name グループ名
+        .groups__group--comment 最新のコメント
+  .chat
+    .top
+      .top__chatgroup
+        .top__chatgroup-name サンプルグループ
+        %ul
+          %li Member：
+          %li.member メンバー名
+      .top__chatgroup--editbtn
+        %a{:href => "#"} Edit
+    .messages
+      .messages__message
+        .messages__message--upper-message
+          .message-user ユーザー名
+          .message-date YYYYMMDD
+        .messages__message--lower-message
+          %p コメント
+    .bottoms
+      %form
+        %input.textarea{:name => "body", :placeholder => "type a message", :type => "text"}/
+        %input.submit{:type => "submit", :value => "Send"}/
