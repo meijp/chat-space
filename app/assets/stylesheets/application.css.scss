@@ -14,11 +14,10 @@
  *= require_self
  */
 
-
 // CSS Reset
 @import "./reset";
 
 // Style
 @import "messages.scss";
 @import "font-awesome";
-
+@import "./variable";

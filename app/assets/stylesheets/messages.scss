@@ -11,7 +11,7 @@
   width: 100%;
 }
 .notification {
-  background-color: #38AEF0;
+  background-color: var(--skyblue);
   text-align: center;
   color: #FFFFFF;
 }
@@ -102,10 +102,10 @@ ul {
     a {
       padding: 0 20px;
       text-decoration: none;
-      border: thin solid #38AEF0;
+      border: thin solid var(--skyblue);
       display: inline-block;
       line-height: 40px;
-      color: #38AEF0;
+      color: var(--skyblue);
     }
   }
 }
@@ -149,7 +149,7 @@ ul {
     border: none;
   }
   .submit {
-    background-color: #38AEF0;
+    background-color: var(--skyblue);
     color: #FFFFFF;
     height: 50px;
     padding: 0 20px;
