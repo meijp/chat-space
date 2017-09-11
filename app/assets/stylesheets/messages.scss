@@ -1,0 +1,167 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+#wrapper {
+  height: 100%;
+  width: 100%;
+}
+.notification {
+  background-color: var(--skyblue);
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.top {
+  height: 100px;
+}
+
+ul {
+  list-style: none;
+}
+
+/*left contents ここから*/
+.sidebar {
+  width: 300px;
+  float: left;
+  color: #FFFFFF;
+}
+
+/*left contents top ここから*/
+.sidebar .top {
+  background-color: #253141;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  .top__user, ul {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    padding: 5px;
+  }
+  a {
+    &:link, &:visited {
+      color: #FFFFFF;
+    }
+  }
+}
+
+/*left contents bottom ここから*/
+.sidebar .groups {
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+  .groups__group {
+    padding: 20px 0;
+  }
+  .groups__group--name {
+    font-size: 15px;
+    padding-bottom: 5px;
+  }
+  .groups__group--comment {
+    font-size: 11px;
+  }
+}
+
+/*right contents ここから*/
+.chat {
+  width: calc(100% - 300px);
+  float: right;
+}
+
+/*right contents top ここから*/
+.chat .top {
+  background-color: #FFFFFF;
+  padding: 0 40px;
+  border-bottom: thin solid #EEEEEE;
+  .top__chatgroup {
+    padding-top: 35px;
+    float: left;
+    .top__chatgroup-name {
+      font-size: 20px;
+      color: #333333;
+      padding-bottom: 15px;
+    }
+    ul {
+      font-size: 12px;
+      color: #999999;
+      padding: 0;
+    }
+    li {
+      float: left;
+    }
+  }
+  .top__chatgroup--editbtn {
+    float: right;
+    margin-top: 28px;
+    a {
+      padding: 0 20px;
+      text-decoration: none;
+      border: thin solid var(--skyblue);
+      display: inline-block;
+      line-height: 40px;
+      color: var(--skyblue);
+    }
+  }
+}
+
+/*right contents messages ここから*/
+.chat .messages {
+  background-color: #F5F5F5;
+  height: calc(100vh - 100px - 90px);
+  padding: 46px 40px 0px 40px;
+  .messages__message {
+    margin-bottom: 40px;
+  }
+  .messages__message--upper-message {
+    margin-bottom: 10px;
+    .message-user {
+      font-size: 16px;
+      color: #434A54;
+      margin-right: 10px;
+      float: left;
+    }
+    .message-date {
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+  .messages__message--lower-message {
+    font-size: 14px;
+    color: #434A54;
+  }
+}
+
+/*right contents bottoms ここから*/
+.chat .bottoms {
+  background-color: #DCDCDC;
+  height: 90px;
+  padding: 20px 40px;
+  .textarea {
+    width: calc(100% - 120px);
+    height: 50px;
+    padding: 0 20px;
+    border: none;
+  }
+  .submit {
+    background-color: var(--skyblue);
+    color: #FFFFFF;
+    height: 50px;
+    padding: 0 20px;
+    border-style: none;
+    font-size: 15px;
+    margin-left: 15px;
+  }
+}
+
+input::-webkit-input-placeholder {
+ font-size: 16px;
+}
+input:-moz-placeholder {
+ font-size: 16px;
+}
