@@ -5,7 +5,7 @@
       %h5 アカウントの編集
       - if user_signed_in?
         = link_to "ログアウト", destroy_user_session_path, :class => "logout", method: :delete
-        %a.backtotop{:href => "#"} トップページに戻る
+        %a{:href => "#"} トップページに戻る
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
         = devise_error_messages!
