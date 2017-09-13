@@ -18,6 +18,9 @@
 @import "./reset";
 
 // Style
-@import "messages.scss";
-@import "font-awesome";
 @import "./variable";
+@import "font-awesome";
+@import "messages";
+@import "user";
+@import "edit";
+
