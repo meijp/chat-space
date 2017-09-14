@@ -13,7 +13,7 @@
 .notification {
   background-color: var(--skyblue);
   text-align: center;
-  color: #FFFFFF;
+  color: white;
 }
 
 .top {
@@ -28,7 +28,7 @@ ul {
 .sidebar {
   width: 300px;
   float: left;
-  color: #FFFFFF;
+  color: white;
 }
 
 /*left contents top ここから*/
@@ -46,7 +46,7 @@ ul {
   }
   a {
     &:link, &:visited {
-      color: #FFFFFF;
+      color: white;
     }
   }
 }
@@ -76,7 +76,7 @@ ul {
 
 /*right contents top ここから*/
 .chat .top {
-  background-color: #FFFFFF;
+  background-color: white;
   padding: 0 40px;
   border-bottom: thin solid #EEEEEE;
   .top__chatgroup {
@@ -150,7 +150,7 @@ ul {
   }
   .submit {
     background-color: var(--skyblue);
-    color: #FFFFFF;
+    color: white;
     height: 50px;
     padding: 0 20px;
     border-style: none;
