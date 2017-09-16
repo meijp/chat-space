@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @group = Group.all
+    @groups = current_user.groups
   end
 
   def new
@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    #p @group.user
     if @group.save
       redirect_to root_path, notice: "グループを作成しました"
     else
@@ -34,7 +35,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-      params.require(:group).permit(:name)
+      params.require(:group).permit(:name, {user_ids: []})
   end
 
   def renew_params

@@ -1,7 +1,8 @@
 #wrapper
   .sidebar
     .top
-      .top__user ユーザー名
+      - if user_signed_in?
+        .top__user= current_user.name
       %ul
         %li.top__user--new
           %a{:href => "#"}
@@ -10,9 +11,10 @@
           %a{:href => "#"}
             %i.fa.fa-cog{"aria-hidden" => "true"}
     .groups
-      .groups__group
-        .groups__group--name グループ名
-        .groups__group--comment 最新のコメント
+      - @groups.each do |group|
+        .groups__group
+          .groups__group--name= group.name
+          .groups__group--comment 最新のコメント
   .chat
     .top
       .top__chatgroup
