@@ -23,7 +23,7 @@
           %li Member：
           %li.member メンバー名
       .top__chatgroup--editbtn
-        %a{:href => "#"} Edit
+        = link_to  "Edit", edit_group_path(@groups)
     .messages
       .messages__message
         .messages__message--upper-message
