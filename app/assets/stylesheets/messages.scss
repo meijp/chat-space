@@ -67,6 +67,10 @@ ul {
     font-size: 11px;
   }
 }
+  .groups__group,a {
+    color: white;
+    text-decoration: none;
+  }
 
 /*right contents ここから*/
 .chat {
@@ -115,6 +119,7 @@ ul {
   background-color: #F5F5F5;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0px 40px;
+  overflow: scroll;
   .messages__message {
     margin-bottom: 40px;
   }
