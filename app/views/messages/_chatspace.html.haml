@@ -1,0 +1,19 @@
+#wrapper
+  .sidebar
+    .top
+      - if user_signed_in?
+        .top__user= current_user.name
+      %ul
+        %li.top__user--new
+          = link_to new_group_path do
+            %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+        %li.top__user--edit
+          = link_to edit_group_path(current_user) do
+            %i.fa.fa-cog{"aria-hidden" => "true"}
+    .groups
+      .groups__group
+      - current_user.groups.each do |group|
+        .groups__group--name
+          = link_to group.name, group_messages_path(group.id)
+        .groups__group--comment
+          = link_to group.messages.last.body, group_messages_path(group.id)

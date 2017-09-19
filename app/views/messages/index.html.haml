@@ -1,0 +1,24 @@
+= render "chatspace"
+.chat
+  .top
+    .top__chatgroup
+      .top__chatgroup-name= @group.name
+      %ul
+        %li Member：
+        - @group.members.each do |member|
+          %li.member= member.user.name
+    .top__chatgroup--editbtn
+      = link_to  "Edit", edit_group_path(@group)
+
+  .messages
+    - @group.messages.each do |message|
+      .messages__message
+        .messages__message--upper-message
+          .message-user= message.user.name
+          .message-date= message.created_at
+        .messages__message--lower-message
+        %p= message.body
+  .bottoms
+    = form_for [@group, @message], url: group_messages_path do |f|
+      = f.text_field :body, placeholder: "type a message", class: "textarea"
+      = f.submit "Send", class: "submit"
