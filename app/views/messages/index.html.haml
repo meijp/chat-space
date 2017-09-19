@@ -5,7 +5,8 @@
       .top__chatgroup-name= @group.name
       %ul
         %li Member：
-        %li.member メンバー名
+        - @group.members.each do |member|
+          %li.member= member.user.name
     .top__chatgroup--editbtn
       = link_to  "Edit", edit_group_path(@group)
 
