@@ -156,6 +156,12 @@ ul {
     border: none;
     float: left;
   }
+  .imagefield {
+    background-color: white;
+    float: left;
+    line-height: 50px;
+    padding-right: 10px;
+  }
   .submit {
     background-color: var(--skyblue);
     color: white;
@@ -166,6 +172,7 @@ ul {
     margin-left: 15px;
   }
 }
+
 
 input::-webkit-input-placeholder {
  font-size: 16px;

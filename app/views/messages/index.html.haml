@@ -18,7 +18,16 @@
           .message-date= message.created_at
         .messages__message--lower-message
         %p= message.body
+        - if message.image.present?
+          %p= image_tag(message.image)
+
   .bottoms
     = form_for [@group, @message], url: group_messages_path do |f|
+      .textfield
       = f.text_field :body, placeholder: "type a message", class: "textarea"
+      .imagefield
+        %label{:for => "file_photo"}
+          %i.fa.fa-picture-o
+          %input#file_photo{:style => "display:none;", :type => "file"}/
+
       = f.submit "Send", class: "submit"
