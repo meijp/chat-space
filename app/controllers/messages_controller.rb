@@ -2,11 +2,8 @@ class MessagesController < ApplicationController
 
   def index
     @groups = current_user.groups.order(created_at: :DESC)
-    # @messages = Message.all
-
     @group = Group.find(params[:group_id])
     @message = Message.new
-
     @messages = current_user.messages
   end
 
@@ -19,7 +16,8 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(@group), notice: "メッセージを作成しました"
     else
-      render :index, alert: "テキストまたは画像を入力してください"
+      flash[:alert] = "テキストまたは画像を入力してください"
+      render :index
     end
   end
 
