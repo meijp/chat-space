@@ -26,7 +26,7 @@
       .textfield
       = f.text_field :body, placeholder: "type a message", class: "textarea"
       .imagefield
-        %label{:for => "file_photo"}
+        = f.label :image do
           %i.fa.fa-picture-o
-          %input#file_photo{:style => "display:none;", :type => "file"}/
+        = f.file_field :image, class: "fileInput",style: "display:none;"
       = f.submit "Send", class: "submit"
