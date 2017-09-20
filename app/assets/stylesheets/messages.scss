@@ -161,6 +161,9 @@ ul {
     float: left;
     line-height: 50px;
     padding-right: 10px;
+    .fileInput{
+      display:none;
+    }
   }
   .submit {
     background-color: var(--skyblue);
