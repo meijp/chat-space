@@ -25,10 +25,9 @@ describe MessagesController, type: :controller do
         expect(assigns(:message).attributes).to eq(blank_message.attributes)
       end
 
-      # @messagesと@groupsについては検証が難しいとのメンター判断により、以下current_userのlog_inテストを実施することとしました。
       it "current_user test" do
         get :index, params: { group_id: group.id, user_id: user.id }
-        expect(assigns(:user)).to eq(subject.current_user)
+        expect(assigns(:current_user)).to eq(subject.current_user)
       end
 
       it "renders index template" do
