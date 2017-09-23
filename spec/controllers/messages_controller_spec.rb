@@ -53,9 +53,9 @@ describe MessagesController, type: :controller do
       end
 
       it "save the new message in the database" do
-        expect do
+        expect {
         post :create, params: { group_id: group, message: attributes_for(:message) }
-        end.to change(Message, :count).by(1)
+        }.to change(Message, :count).by(1)
       end
 
       it 'redirect to group_messages_path' do
@@ -70,9 +70,9 @@ describe MessagesController, type: :controller do
       end
 
       it "can NOT save the new message in the database" do
-        expect do
-        post :create, params: { group_id: group, message: attributes_for(:message, body: nil, image: nil) }
-        end.to change(Message, :count).by(0)
+        expect {
+          post :create, params: { group_id: group, message: attributes_for(:message, body: nil, image: nil) }
+        }.to change(Message, :count).by(0)
       end
 
       it 'redirects to group_messages_path' do
