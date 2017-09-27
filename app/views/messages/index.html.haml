@@ -22,7 +22,7 @@
           %p= image_tag(message.image)
 
   .bottoms
-    = form_for [@group, @message], url: group_messages_path, method: :post, id: "new_message" do |f|
+    = form_for [@group, @message], url: group_messages_path do |f|
       .textfield
       = f.text_field :body, placeholder: "type a message", class: "textarea"
       .imagefield
