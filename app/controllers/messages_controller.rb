@@ -13,11 +13,15 @@ class MessagesController < ApplicationController
   def create
     @group = Group.find(params[:group_id])
     @message = Message.new(message_params)
-    if @message.save
-      redirect_to group_messages_path(@group), notice: "メッセージを作成しました"
-    else
-      flash[:alert] = "テキストまたは画像を入力してください"
-      render :index
+
+      if @message.save
+        respond_to do |format|
+          format.html { redirect_to group_messages_path(@group), notice: "メッセージを作成しました" }
+          format.json
+        end
+      else
+        flash[:alert] = "テキストまたは画像を入力してください"
+        render :index
     end
   end
 
