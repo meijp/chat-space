@@ -42,8 +42,7 @@ $(function() {
   });
 
   //追加ボタンをクリック
-    $(document).on('click',".chat-group-user__btn--add", function(e) {
-      e.preventDefault();
+    $(document).on('click',".chat-group-user__btn--add", function() {
       var id = $(this).attr('data-user-id');
       var name = $(this).attr('data-user-name');
       var html = appendUserList(id, name);
@@ -52,10 +51,7 @@ $(function() {
     });
 
   //削除ボタンをクリック
-    $(document).on('click',".chat-group-user__btn--remove", function(e) {
-      e.preventDefault();
-      var id = $(this).attr('data-user-id');
-      var name = $(this).attr('data-user-name')
+    $(document).on('click',".chat-group-user__btn--remove", function() {
       $(this).parents('.chat-group-user').remove();
     });
   });
