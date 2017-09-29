@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 チャットグループ編集
-  %form#edit_chat_group_22.edit_chat_group{"accept-charset" => "UTF-8", :action => "/chat_groups/22", :method => "post"}
+  %form#edit_chat_group_22.edit_chat_group{"accept-charset": "UTF-8", action: "/chat_groups/", method: :post}
     .chat-group-form__errors
       - if @group.errors.any?
         %h2
@@ -10,28 +10,4 @@
           -@group.errors.full_messages.each do |message|
             %li
               =message
-  = form_for @group do |f|
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :グループ名, class: "chat-group-form__label", for: "chat_group_name"
-      .chat-group-form__field--right
-        = f.text_field :name, placeholder: "グループ名を入力してください", class: "chat-group-form__input"
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
-      .chat-group-form__field--right
-        .chat-group-form__search.clearfix
-          %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text", class: "chat-group-form__text"}/
-        #user-search-result
-
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :チャットメンバー, class: "chat-group-form__label", for: "chat_group_チャットメンバー"
-      .chat-group-form__field--right
-        #chat-group-users
-          %p.chat-group-user__name
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-      .chat-group-form__field--right
-        / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-        = f.submit "Save", name: "commit", class: "chat-group-form__action-btn"
+  = render "groupmember"
