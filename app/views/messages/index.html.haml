@@ -12,7 +12,7 @@
 
   .messages
     - @group.messages.each do |message|
-      .messages__message
+      .messages__message{data: {id: message.id } }
         .messages__message--upper-message
           .message-user= message.user.name
           .message-date= message.created_at
